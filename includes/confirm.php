@@ -18,7 +18,6 @@
 
     if (mail("test@localhost", "Deelname Wedstrijd", $bericht, $verzender)){
         echo "BERICHT VERZONDEN";
-        SaveToDb();
 
 
 
@@ -27,6 +26,9 @@
     else{
         echo "BERICHT NIET VERZONDEN";
     }
+
+    
+    SaveToDb();
 ?>
     <?php
         echo '<p>Naam '.$_POST["naam"].'</p>';

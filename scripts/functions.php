@@ -1,16 +1,7 @@
 <?php
 function SaveToDb()
 {
-    $servername = "localhost";
-    $username = "test";
-    $password = "test";
-    $dbname = "test";
-
-    $conn  = new mysqli($servername, $username, $password,$dbname);
-
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
+   $conn = connectToDB()
     $sql = "INSERT INTO info(Naam, Adress, Postcode, Gemeente, Telefoon, `E-Mail`, Geboorte, Foto, Camera, Lens, Beschrijving)
     VALUES ('".$_POST["naam"]."','".$_POST["adres"]."','".$_POST["postcode"]."','".$_POST["gemeente"]."','".$_POST["telefoonnummer"]."','".$_POST["e-mailadres"]."','".$_POST["geboortedatum"]."','".$_POST["fotoTitel"]."','".$_POST["camera"]."','".$_POST["lens"]."','".$_POST["fotoBeschrijving"]."');";
     echo $sql;
@@ -21,4 +12,29 @@ function SaveToDb()
         echo "Error: " .$sql . "<br>" .$conn->error;
     }
 }
+
+function geefInsch(){
+    $conn = connectToDB();
+
+
+    $result = $conn->query($sql)
+    while($row = $result->fetch_row()) {
+    
+}
+}
+function connectToDB(){
+    $servername = "localhost";
+    $username = "test";
+    $password = "test";
+    $dbname = "test";
+
+    $conn  = new mysqli($servername, $username, $password,$dbname);
+
+    if ($conn->connect_error) {
+    
+      die("Connection failed: " . $conn->connect_error);
+    }
+    return $conn;
+}
+
         ?>
