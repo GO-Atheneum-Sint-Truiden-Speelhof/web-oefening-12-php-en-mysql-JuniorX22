@@ -1,3 +1,4 @@
+<?php include("scripts/functions.php"); ?>
 <div class="jumbotron">
     <h1 class="display-4">Login pagina</h1>
 </div>
@@ -18,7 +19,13 @@
                 <th>Camera</th>
                 <th>Lens</th>
                 <th>fotoBeschrijving</th>
-              </tr>
+            </tr> 
+        </thead>
+        <tbody>
+            <?php   
+             geefInsch();
+            ?>        
+        </tbody>
     </table>
     </div>
 </div>

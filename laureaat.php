@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang=nl>
 
-<?php  include('<includes/head.php') ?>
+<?php  include('includes/head.php') ?>
 
 <body>
 	<div class="container">
